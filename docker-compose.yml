@@ -1,0 +1,25 @@
+version: "3"
+services: 
+    web:
+        container_name: docker-vue-ci
+        image: docker-vue-ci
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        environment: 
+            - CHOKIDAR_USEPOLLING=true
+        ports: 
+            - "3010:8080"
+        volumes: 
+            - .:/app/docker-vue-ci
+            - /app/docker-vue-ci/node_modules
+    tests:
+        container_name: docker-vue-ci-unittest
+        image: docker-vue-ci-unittest
+        build: 
+            context: .
+            dockerfile: Dockerfile.dev
+        volumes: 
+            - .:/app/docker-vue-ci
+            - /app/docker-vue-ci/node_modules
+        command: ["npm","run","test:unit"]
