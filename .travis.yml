@@ -5,3 +5,14 @@ before_install:
   - docker build -t docker-vue -f Dockerfile.dev .
 script:
   - docker run docker-vue npm run test:unit
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "docker-vue"
+  env: "Dockervue-env"
+  bucket_name: "elasticbeanstalk-us-east-1-226242765231"
+  bucket_path: "docker-vue"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
