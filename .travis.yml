@@ -13,7 +13,7 @@ deploy:
   bucket_name: "elasticbeanstalk-us-east-1-226242765231"
   bucket_path: "docker-vue"
   on:
-    branch: master
+    branch: main
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: 
     secure: "$AWS_SECREAT_KEY"
