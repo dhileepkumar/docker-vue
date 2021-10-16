@@ -2,5 +2,6 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker build -t dhileepvaluelabs/docker-vue -f Dockerfile.dev .
-  - 
+  - docker build -t docker-vue -f Dockerfile.dev .
+script:
+  - docker run docker-vue npm run test:unit
