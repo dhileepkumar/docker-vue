@@ -8,8 +8,8 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "docker-vue"
-  env: "Dockervue-env"
+  app: "dockervue-env"
+  env: "Dockervueenv-env"
   bucket_name: "elasticbeanstalk-us-east-1-226242765231"
   bucket_path: "docker-vue"
   on:
