@@ -7,10 +7,10 @@ script:
   - docker run docker-vue npm run test:unit
 deploy:
   provider: elasticbeanstalk
-  region: "us-east-1"
-  app: "dockervue-env"
-  env: "Dockervueenv-env"
-  bucket_name: "elasticbeanstalk-us-east-1-226242765231"
+  region: "ap-south-1"
+  app: "docker-vue"
+  env: "Dockervue-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-226242765231"
   bucket_path: "docker-vue"
   on:
     branch: main
